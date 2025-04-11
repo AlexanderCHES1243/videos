@@ -8,39 +8,20 @@
 <body>
 
 <!-- Contenedor con overflow oculto -->
-<div style="width: 250px; height: 110px; margin: 20px auto; overflow: hidden; position: relative;">
+<div style="width: 280px; height: 150px; margin: 20px auto; overflow: hidden; position: relative;">
   
   <!-- Slider con todos los videos -->
   <div id="youtubeSlider" style="display: flex; transition: transform 0.4s ease-in-out; width: 100%;">
-    <div style="width: 250px; height: 110px; flex-shrink: 0; display: flex; justify-content: center; align-items: center;">
-      <iframe width="250" height="110" src="https://www.youtube.com/embed/wJYC-0I5lYY" allowfullscreen style="border: none;"></iframe>
+    <div style="width: 280px; height: 150px; flex-shrink: 0; display: flex; justify-content: center; align-items: center;">
+      <iframe width="280" height="150" src="https://www.youtube.com/embed/wJYC-0I5lYY" allowfullscreen style="border: none;"></iframe>
     </div>
-    <div style="width: 250px; height: 110px; flex-shrink: 0; display: flex; justify-content: center; align-items: center;">
-      <iframe width="250" height="110" src="https://www.youtube.com/embed/YxVPLNBhcP8?list=PL8RK0oJz6sMCrChMF1iGwoDqX5PgzCLP5" allowfullscreen style="border: none;"></iframe>
+    <div style="width: 280px; height: 150px; flex-shrink: 0; display: flex; justify-content: center; align-items: center;">
+      <iframe width="280" height="150" src="https://www.youtube.com/embed/YxVPLNBhcP8?list=PL8RK0oJz6sMCrChMF1iGwoDqX5PgzCLP5" allowfullscreen style="border: none;"></iframe>
     </div>
-    <div style="width: 250px; height: 110px; flex-shrink: 0; display: flex; justify-content: center; align-items: center;">
-      <iframe width="250" height="110" src="https://www.youtube.com/embed/Zig_4EKaS4c?list=PL8RK0oJz6sMCrChMF1iGwoDqX5PgzCLP5" allowfullscreen style="border: none;"></iframe>
+    <div style="width: 280px; height: 150px; flex-shrink: 0; display: flex; justify-content: center; align-items: center;">
+      <iframe width="280" height="150" src="https://www.youtube.com/embed/Zig_4EKaS4c?list=PL8RK0oJz6sMCrChMF1iGwoDqX5PgzCLP5" allowfullscreen style="border: none;"></iframe>
     </div>
   </div>
 
   <!-- Botones de navegación -->
-  <button onclick="moveSlide(-1)" style="position: absolute; top: 50%; left: 5px; transform: translateY(-50%); font-size: 14px; background-color: rgba(0, 0, 0, 0.5); color: white; border: none; padding: 2px 6px; cursor: pointer;">❮</button>
-  <button onclick="moveSlide(1)" style="position: absolute; top: 50%; right: 5px; transform: translateY(-50%); font-size: 14px; background-color: rgba(0, 0, 0, 0.5); color: white; border: none; padding: 2px 6px; cursor: pointer;">❯</button>
-</div>
-
-<script>
-  let index = 0;
-  const slider = document.getElementById('youtubeSlider');
-  const slideWidth = 250;
-  const totalSlides = slider.children.length;
-
-  function moveSlide(direction) {
-    index += direction;
-    if (index < 0) index = totalSlides - 1;
-    if (index >= totalSlides) index = 0;
-    slider.style.transform = `translateX(${-index * slideWidth}px)`;
-  }
-</script>
-
-</body>
-</html>
+  <button onclick="moveSlide(-1)" style="position: absolute; top: 50%; left: 5px; transform: translateY(-50%); font-size: 14px; background-color: rgba(0, 0, 0, 0.5);
