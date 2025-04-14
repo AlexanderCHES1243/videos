@@ -1,46 +1,114 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Slider de YouTube Adaptable</title>
-</head>
-<body>
-
-<!-- Contenedor con overflow oculto -->
-<div style="width: 280px; height: 160px; margin: 20px auto; overflow: hidden; position: relative;border-radius: 10px;">
-  
-  <!-- Slider con videos -->
-  <div id="youtubeSlider" style="display: flex; transition: transform 0.4s ease-in-out;">
-    <div style="width: 280px; height: 160px; flex-shrink: 0; display: flex; justify-content: center; align-items: center;border-radius: 10px;">
-      <iframe src="https://www.youtube.com/embed/wJYC-0I5lYY" allowfullscreen style="border: none; width: 100%; height: 100%;"></iframe>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <style>
+        .carousel {
+            position: relative;
+            margin: auto;
+            overflow: hidden;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            transition-delay: 10ms;
+        }
+        
+        .carousel-inner {
+            display: flex;
+        }
+        
+        .carousel-item {
+            min-width: 100%;
+        }
+        
+        .carousel-item img {
+            display: block;
+            width: 100%;
+            height: auto;   
+        }
+        
+        /* Indicadores */
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            gap: 10px;
+        }
+        
+        .carousel-indicators button {
+            width: 7px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #bbb;
+            border: none;
+            cursor: pointer;
+            opacity: 0.6;
+        }
+        
+        .carousel-indicators button.active {
+            background-color: #67727d;
+            opacity: 1;
+        }
+        
+        /* Controles de navegación */
+        .carousel-control {
+            position: absolute;
+            top: 50%;
+            background-color: rgba(0, 0, 0, 0.1);
+            transform: translateY(-50%);
+            border: none;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            padding: 3px;
+            z-index: 7;
+        }
+        
+        .carousel-control.prev {
+            left: 10px;
+        }
+        
+        .carousel-control.next {
+            right: 10px;
+        }
+        
+        .carousel-control:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        
+        </style>
+  </head>
+  <body>
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://elearning.ceoacademy.edu.pe/draftfile.php/44186/user/draft/665981590/SLIDER01.png" class="d-block w-100" alt="Imagen 1">
+            </div>
+            <div class="carousel-item">
+                <img src="https://elearning.ceoacademy.edu.pe/draftfile.php/44186/user/draft/195025666/SLIDER02.png" class="d-block w-100" alt="Imagen 2">
+            </div>
+            <div class="carousel-item">
+                <img src="https://elearning.ceoacademy.edu.pe/draftfile.php/44186/user/draft/195025666/SLIDER03.png" class="d-block w-100" alt="Imagen 3">
+            </div>
+            <div class="carousel-item">
+                <img src="https://elearning.ceoacademy.edu.pe/draftfile.php/44186/user/draft/195025666/SLIDER04.png" class="d-block w-100" alt="Imagen 4">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden"></span>
+        </button>
     </div>
-    <div style="width: 280px; height: 160px; flex-shrink: 0; display: flex; justify-content: center; align-items: center;border-radius: 10px;">
-      <iframe src="https://www.youtube.com/embed/YxVPLNBhcP8?list=PL8RK0oJz6sMCrChMF1iGwoDqX5PgzCLP5" allowfullscreen style="border: none; width: 100%; height: 100%;"></iframe>
-    </div>
-    <div style="width: 280px; height: 160px; flex-shrink: 0; display: flex; justify-content: center; align-items: center;border-radius: 10px;">
-      <iframe src="https://www.youtube.com/embed/Zig_4EKaS4c?list=PL8RK0oJz6sMCrChMF1iGwoDqX5PgzCLP5" allowfullscreen style="border: none; width: 100%; height: 100%;"></iframe>
-    </div>
-  </div>
-
-  <!-- Botones de navegación -->
-  <button onclick="moveSlide(-1)" style="position: absolute; top: 50%; left: 5px; transform: translateY(-50%); font-size: 14px; background-color: rgba(0, 0, 0, 0.5); color: white; border: none; padding: 2px 6px; cursor: pointer;">❮</button>
-  <button onclick="moveSlide(1)" style="position: absolute; top: 50%; right: 5px; transform: translateY(-50%); font-size: 14px; background-color: rgba(0, 0, 0, 0.5); color: white; border: none; padding: 2px 6px; cursor: pointer;">❯</button>
-</div>
-
-<script>
-  let index = 0;
-  const slider = document.getElementById('youtubeSlider');
-  const slideWidth = 280;
-  const totalSlides = slider.children.length;
-
-  function moveSlide(direction) {
-    index += direction;
-    if (index < 0) index = totalSlides - 1;
-    if (index >= totalSlides) index = 0;
-    slider.style.transform = `translateX(${-index * slideWidth}px)`;
-  }
-</script>
-
-</body>
+  </body>
 </html>
